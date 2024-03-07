@@ -216,8 +216,37 @@ body {
   display: flex;
   justify-content: space-between;
   position: relative;
-  width: 100%;
-  margin-top: 10rem;
-  padding: 0 10rem;
+  max-width: 90rem;
+  margin-top: 9rem;
+
   transition: all 400ms ease-in-out;
+}
+
+.hero__img {
+  margin-right: 23rem;
+}
+
+.hero__info {
+  position: absolute;
+  bottom: 0rem;
+  right: -3rem;
+  max-width: 35.5rem;
+  background-color: var(--clr-primary-100);
+  padding-top: 3rem;
+  padding-left: 5rem;
+}
+
+.hero__title {
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-850);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero__text {
+  color: var(--clr-primary-300);
+  font-weight: var(--fw-semiBold);
+  font-size: var(--fs-300);
 }
