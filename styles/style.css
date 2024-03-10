@@ -551,8 +551,13 @@ body {
     margin-bottom: 2rem;
   }
 
+  .footer__nav--item {
+    margin: 0;
+  }
+
   .footer__social {
     width: 100%;
     justify-content: center;
+    margin-bottom: 1rem;
   }
 }
