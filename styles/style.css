@@ -88,6 +88,7 @@ body {
   font-size: var(--fs-400);
   display: flex;
   justify-content: center;
+  height: 100svh;
 }
 
 .wrapper {
@@ -128,23 +129,7 @@ body {
 }
 
 .btn--light-mobile {
-  font-size: var(--fs-300);
-  font-weight: var(--fw-semiBold);
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  background-color: transparent;
-  outline: 1px solid var(--clr-primary-900);
-  border: none;
-  padding-inline: 2rem;
-  padding-block: 0.5rem;
-  cursor: pointer;
-}
-
-.btn--light-mobile:hover,
-.btn--light-mobile:focus {
-  background-color: var(--clr-primary-900);
-  color: var(--clr-primary-100);
-  transition: all 400ms ease-in-out;
+  display: none;
 }
 
 .link--hover::after {
@@ -200,7 +185,7 @@ body {
 .header__logo,
 .main__nav,
 .menu__icon {
-  z-index: 10;
+  z-index: 1000;
 }
 
 .main__nav--list {
@@ -212,7 +197,7 @@ body {
 }
 
 .main__nav--link {
-  font-size: var(--fs-300);
+  font-size: var(--fs-400);
   font-weight: var(--fw-regular);
   color: var(--clr-primary-100);
   position: relative;
@@ -238,6 +223,16 @@ body {
   transform: rotate(180deg);
 }
 
+.mask {
+  display: flex;
+  background-color: var(--clr-primary-900);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  transition: all 400ms ease-in-out;
+}
+
 .header__title {
   position: relative;
   left: -1px;
@@ -260,7 +255,7 @@ body {
   align-items: center;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 860px) {
   .header {
     padding: 3rem 2rem;
   }
@@ -268,11 +263,11 @@ body {
   .main__nav {
     position: absolute;
     top: 15rem;
-    left: ---176px;
+    left: -200px;
   }
 
   .show--menu {
-    left: 2rem;
+    left: 1rem;
   }
 
   .main__nav--list {
@@ -281,18 +276,25 @@ body {
   }
 
   .main__nav--item {
-    font-size: var(--fs-600);
-    text-transform: uppercase;
     margin-bottom: 1.5rem;
+  }
+
+  .main__nav--link {
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-700);
+    font-weight: var(--fw-regular);
+    color: var(--clr-primary-100);
+    text-transform: uppercase;
   }
 
   .menu__icon {
     display: flex;
   }
 
-  .show--menu {
-    min-height: 100vh;
+  .show--mask {
+    min-height: 100svh;
     left: 0;
+    z-index: 100;
   }
 }
 
@@ -319,7 +321,7 @@ body {
   max-width: 35.5rem;
   background-color: var(--clr-primary-100);
   padding-top: 3rem;
-  padding-left: 5rem;
+  padding-inline: 5rem;
 }
 
 .hero__title {
@@ -335,6 +337,7 @@ body {
   color: var(--clr-primary-300);
   font-weight: var(--fw-semiBold);
   font-size: var(--fs-300);
+  padding-right: 1.5rem;
 }
 
 @media screen and (max-width: 860px) {
@@ -349,12 +352,13 @@ body {
     justify-content: center;
     align-items: center;
     margin-right: 0;
+    padding-inline: 1.5rem;
   }
 
   .hero__info {
     position: relative;
     right: 0;
-    padding-left: 0rem;
+    padding-top: 2rem;
     text-align: center;
   }
 }
@@ -363,6 +367,7 @@ body {
 
 .gallery {
   margin-top: 11rem;
+  margin-bottom: 0;
 }
 
 .gallery__header {
@@ -385,6 +390,7 @@ body {
   grid-auto-rows: 28.125rem;
   gap: 1.75rem;
   margin-top: 4rem;
+  padding-inline: 1.5rem;
   position: relative;
   cursor: pointer;
 }
@@ -412,6 +418,7 @@ body {
 }
 
 .gallery__images--img {
+  border-radius: 12px;
   transition: all 400ms ease-in-out;
 }
 
@@ -456,6 +463,26 @@ body {
     display: none;
   }
 
+  .btn--light-mobile {
+    font-size: var(--fs-300);
+    font-weight: var(--fw-semiBold);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    background-color: transparent;
+    outline: 1px solid var(--clr-primary-900);
+    border: none;
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
+    cursor: pointer;
+  }
+
+  .btn--light-mobile:hover,
+  .btn--light-mobile:focus {
+    background-color: var(--clr-primary-900);
+    color: var(--clr-primary-100);
+    transition: all 400ms ease-in-out;
+  }
+
   .gallery {
     margin-top: 5rem;
   }
@@ -467,7 +494,11 @@ body {
   .gallery__images {
     grid-template-columns: 1fr;
     grid-auto-rows: max-content;
-    padding-inline: 1rem;
+    padding-inline: 1.5rem;
+  }
+
+  .gallery__images--img {
+    min-height: 200px;
   }
 
   .gallery__images--img:nth-child(1) {
@@ -510,7 +541,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 11rem;
   background-color: var(--clr-primary-900);
 }
 

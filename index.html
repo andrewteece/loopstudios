@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loopstudios landing page</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <script src="./js/lib/anime.min.js" defer></script>
+    <script src="./js/script.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
       <div class="header__wrapper">
         <div class="header__bg">
           <header class="header">
-            <figure>
+            <figure class="header__logo">
               <img
                 src="images/logo.svg"
-                class="header__logo"
+                class="header__logo--img"
                 alt="loopstudios logo"
               />
             </figure>
@@ -45,6 +47,7 @@
               </h1>
             </section>
           </header>
+          <div class="mask" id="mask"></div>
         </div>
       </div>
       <!--MAIN -->
@@ -122,6 +125,7 @@
           </div>
         </div>
       </main>
+
       <footer class="footer">
         <div class="footer__wrapper">
           <div class="footer--left">
