@@ -94,9 +94,11 @@ body {
 .wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  margin: 0 auto;
+  padding-inline: 1.5rem;
+  /*margin: 0 auto;*/
 }
 
 /* UTILITY */
@@ -373,7 +375,7 @@ body {
 .gallery__header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding-inline: 1.5rem;
 }
 
 .gallery__title {
@@ -381,6 +383,7 @@ body {
   font-family: var(--ff-secondary);
   font-weight: var(--fw-regular);
   text-transform: uppercase;
+  flex-basis: content;
 }
 
 .gallery__images {
